@@ -1,7 +1,9 @@
 <script>
+import { v4 as uuid} from "uuid";
 export default {
   data() {
     return{
+      novo_time: "",
       times:[
         { id:"04f6600e-821e-4968-934b-29a3f600d8ed", name: "Time 1" },
         { id:"16b45733-887a-4226-98a5-4a658cbbfd36", name: "Time 2" },
@@ -10,16 +12,25 @@ export default {
       ],
     };
   },
+  methods: {
+    salvar(){
+      const novo_id = uuid();
+      this.times.push({
+        id: novo_id,
+        name: this.novo_time,
+      });
+    },
+  },
 };
 </script>
 <template>
   <div class="container">
     <div class="title">
-      <h2> Gerenciamento de times</h2>
+      <h2>Gerenciamento de times</h2>
     </div>
     <div class="form-input">
-      <input type="text" />
-      <button>Salvar</button>
+      <input type="text" v-model="novo_time" />
+      <button @click="salvar">Salvar</button>
     </div>
     <div class="list-items">
       <table>
@@ -31,16 +42,15 @@ export default {
           </tr>
         </thead>
         <tbody>
-        <tr v-for="time in times" :key="time.id">
-          <td> {{ time.id }} </td>
-          <td> {{ time.name }} </td>
-          <td>???</td>
-        </tr>
-      </tbody>
+          <tr v-for="time in times" :key="time.id">
+            <td>{{ time.id }}</td>
+            <td>{{ time.name }}</td>
+            <td>???</td>
+          </tr>
+        </tbody>
       </table>
-      
     </div>
   </div>
 </template>
 
-<style> </style>
+<style></style>
