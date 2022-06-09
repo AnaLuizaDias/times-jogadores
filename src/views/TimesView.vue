@@ -3,10 +3,10 @@ export default {
   data() {
     return{
       times:[
-        { id:1, name: "Time 1" },
-        { id:2, name: "Time 2" },
-        { id:3, name: "Time 3" },
-        { id:4, name: "Time 4" },
+        { id:"04f6600e-821e-4968-934b-29a3f600d8ed", name: "Time 1" },
+        { id:"16b45733-887a-4226-98a5-4a658cbbfd36", name: "Time 2" },
+        { id:"63163b6c-709d-479d-8190-68200c2bc98c", name: "Time 3" },
+        { id:"1a167632-ccca-4314-921d-d2165a9fe8c1", name: "Time 4" },
       ],
     };
   },
